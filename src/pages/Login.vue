@@ -42,7 +42,6 @@
           Register
         </router-link>
         <q-btn
-          color="primary"
           @click="login"
         >
           Login

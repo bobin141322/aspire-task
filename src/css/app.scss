@@ -426,6 +426,34 @@ body {
             color: #01d167;
             margin-right: 20px;
         }
+        button {
+            background-color: #01d167;
+            color: #fff;
+            font-weight: bold;
+        }
+       
+     }
+     .loan-page {
+         button {
+            margin-top: 40px;
+            background-color: #01d167;
+            color: #fff;
+            font-weight: bold;
+         }
+        .columns{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap: 30px;
+            .column {
+                label {
+                    font-weight: bold;
+                }
+            }
+        }
+        .result-columns h3{
+            font-size: 26px;
+            color: #0C365A;
+        }
      }
 
 }

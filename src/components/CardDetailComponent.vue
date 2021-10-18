@@ -2,7 +2,7 @@
 <div class="card-detail-list">
         <div class="card-detail-field has-bg">
             <a ></a>
-            <span class="detail-text">Card details </span>
+            <span class="detail-text">Card details</span>
             <button class="arrow"></button>
         </div>
         <div class="transactions has-bg">

@@ -1,0 +1,427 @@
+// app global css in SCSS form
+body {
+    font-family: 'Open Sans',sans-serif;
+}
+.page-layout {
+    display: flex;
+    width: 100%;
+    .comments-list-wrapper {
+        width: 30%;
+        height: 100%;
+        border: 1px solid #ccc;
+        display: inline-flex;
+    }
+    .toolbar,
+    .mobile-navigation {
+        display: none;
+    }
+}
+.container {
+ width: 100%;
+ display: flex;
+    .navigation {
+        background-color: #0C365A;
+        font-size: 20px;
+        width: 25%;
+        height: 100%;
+        padding-left: 35px;
+        padding-top: 30px;
+        .menu-nav {
+            color: #fff;
+            &:hover, &:focus{
+                color: #01d167;
+            }
+            span {
+                width: 1.5em;
+                height: 1.2em;
+                display: inline-block;
+                padding: 32px 0;
+            }
+            .column {
+                justify-content: flex-start;
+                font-size: 16px;
+            }
+            .aspire-icon {
+                background: url('../assets/aspire.svg') no-repeat;
+            }
+            .payment-icon {
+                background: url('../assets/payments.svg') no-repeat;
+            }
+            .card-icon {
+                background: url('../assets/card.svg') no-repeat;
+            }
+            .account-icon {
+                background: url('../assets/account.svg') no-repeat;
+            }
+            .credit-icon {
+                background: url('../assets/credit.svg') no-repeat;
+            }
+        }
+        .aspire-logo {
+            height: 69px;
+            width: 256px;
+            display: block;
+            background-repeat: no-repeat;
+            background-image: url('../assets/logo.svg');
+            
+        }
+        .slogan {
+            color: #fff;
+            opacity: 0.3;
+        }
+    }
+    .card-header {
+        .card-bar{
+            display: flex;
+            align-items: center;
+            .currency {
+                background-color: #01D167;
+                border-radius: 5px;
+                color: #fff;
+                padding: 5px;
+                width: 40px;
+                height: 24px;
+                margin-right: 10px;
+                font-weight: bold;
+                line-height: 14px;
+                text-align: center;
+            }
+                        
+            
+            .balance {
+                font-size: 26px;
+                font-weight: bold;
+            }
+            button {
+                padding: 5px;
+                background-color: #325BAF;
+                color: #fff;
+                border: 0;
+                border-radius: 5px;
+                width: 110px;
+                display: flex;
+                margin-left: auto;
+                height: 35px;
+                align-items: center;
+
+                i {
+                    width: 20px;
+                    height: 20px;
+                    display: block;
+                    background: url('../assets/box.svg') no-repeat;
+                }
+            }
+           
+        }
+        
+    }
+    .tab {
+        overflow: hidden;
+        font-family: "Avenir Next", sans-serif;
+        font-size: 14px;
+      }
+      
+      .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 4px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+        color: #222222;
+        opacity: 0.3;
+      }
+      
+      .tab button:hover {
+        border-bottom: 2px solid #23CEFD;
+        opacity: 1;
+      }
+      
+      .tab button.active {
+        border-bottom: 2px solid #23CEFD;
+        font-weight: bold;
+        opacity: 1;
+      }
+      .tabcontent {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 40px;
+      }
+      .content-page{
+          padding: 40px;
+          width: 75%;
+            .card-content{
+                display: flex;
+                flex-direction: column;
+                justify-self: end;
+
+                .flat-card {
+                    display: flex;
+                    flex-direction: column;
+                    .show-card-link {
+                        color: #01D167;
+                        text-align: right;
+                        font-size: 12px;
+                        font-weight: bold;
+                        margin-bottom: 8px;
+                        &::before {
+                            display: inline;
+                            content: url(../assets/remove_red_eye-24px.svg);
+                            width: 10px;
+                            height: 10px;
+                            vertical-align: middle;
+                            margin-right: 5px;
+                                
+                        }
+                    }
+                    .dot {
+                        height: 9px;
+                        width: 9px;
+                        background-color: #fff;
+                        border-radius: 50%;
+                        display: inline-block;
+                        margin-right: 5px;
+                        &:nth-child(4n) {
+                            margin-right: 20px;
+                        }
+                    }
+                    .indicator {
+                        margin: 0 auto;
+                        .dot {
+                            background-color: #01D167;
+                            opacity: 0.2;
+                            &.active {
+                                opacity: 1;
+                                width: 15px;
+                            }
+                        }
+                    }
+                    .card-box {
+                        background-color: #01D167;
+                        border-radius: 12px;
+                        padding: 20px;
+                        width: 414px;
+                        height: 248px;
+                        color: #fff;
+                        
+                        .card-name {
+                            font-size: 24px;
+                            font-weight: bold;
+                            padding: 20px 0;
+                            display: block;
+
+                        }
+                        .card-number {
+                            font-size: 14px;
+                            font-weight: bold;
+                            letter-spacing: 9px;
+                            padding: 10px 0;
+                        }
+                        .card-info {
+                            margin-top: 20px;
+                            font-size: 13px;
+                            span {
+                                width: 100px;
+                                display: inline-block;
+                                margin-right: 20px;
+                                i {
+                                    font-size: 24px;
+                                    vertical-align: middle;
+                                }
+                            }          
+                        }
+                        .white-logo {
+                            background: url('../assets/white-logo.svg') no-repeat;
+                            width: 100px;
+                            height: 50px;
+                            float: right;
+                            display: block;
+                        }
+                        .visa-logo {
+                            background: url('../assets/visa-logo.svg') no-repeat;
+                            width: 100px;
+                            height: 50px;
+                            float: right;
+                            display: block;
+                        }
+                    }
+                }
+                
+                }
+                .setting-list {
+                    background-color: #EDF3FF;
+                    border-radius: 12px;
+                    padding: 15px 20px;
+                    display: flex;
+                    max-width: 414px;
+                    justify-content: space-between;
+                    text-align: center;
+                    li {
+                        display: flex;
+                        flex-direction: column;
+                        max-width: 65px;
+                        align-items: center;
+                    
+                        a {
+                            width: 36px;
+                            height: 36px;
+                            display: block;
+                        }
+                        .freeze {
+                            background: url('../assets/Freeze card.svg') no-repeat;
+                        }
+                        .spend-limit {
+                            background: url('../assets/Set spend limit.svg') no-repeat;
+                        }
+                        .gpay {
+                            background: url('../assets/GPay.svg') no-repeat;
+                        }
+                        .replace-card {
+                            background: url('../assets/Replace card.svg') no-repeat;
+                        }
+                        .cancle-card {
+                            background: url('../assets/Deactivate card.svg') no-repeat;
+                        }
+                    }
+                }
+                .mobile-control {
+                    display: none;
+                }
+            .card-detail-list {
+                display: flex;
+                flex-direction: column;
+                .mobile-control {
+                    display: none;
+                }
+                .has-bg {
+                    padding: 24px;
+                    background-color: #F5F9FF;
+                    color: #0C365A;
+                    align-items: center;
+                    .arrow {
+                        width: 20px;
+                        height: 20px;
+                        display: block;
+                        background: url('../assets/down-arrow.svg') no-repeat;
+                        border: 0;
+                        margin-left: auto;
+                    }
+                }
+                .card-detail-field {
+                    display: flex;
+                    margin-bottom: 20px;
+                    a {
+                        width: 32px;
+                        height: 25px;
+                        display: block;
+                        background: url('../assets/card-detail.svg') no-repeat;
+                    }
+                    button {
+                        transform: rotate(
+                            180deg);
+                    }
+                }
+                .transactions {
+                    display: flex;
+                    border-radius: 12px 12px 0 0;
+                    border: 1px solid #F0F0F0;
+                    border-bottom: 0;
+                    a {
+                        width: 32px;
+                        height: 25px;
+                        display: block;
+                        background: url('../assets/transaction.svg') no-repeat;
+                    }
+                }
+                ul{
+                    border: 1px solid #F0F0F0;
+                    border-bottom: 0 ;
+                    margin-top: 0;
+                    padding: 20px 10px 20px 30px;
+                    background-color: #fff;
+                    margin-bottom: 0;
+                    li {
+                        display: flex;
+                        column-gap: 20px;
+                        a {
+                            width: 48px;
+                            height: 48px;
+                            display: block;
+                            border-radius: 50%;
+                            &.storage {
+                                background: url('../assets/file-storage.svg') no-repeat 13px 15px;
+                                background-color: #009DFF1A;
+        
+                            }
+                            &.flights {
+                                background: url('../assets/flights.svg') no-repeat 13px 15px;
+                                background-color: #009DFF1A;
+                            }
+                            &.megaphone {
+                                background: url('../assets/megaphone.svg') no-repeat 13px 15px;
+                                background-color: #F251951A;
+                            }
+        
+                        }
+    
+                        .detail-item {
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            .detail-title {
+                                font-size: 14px;
+                                font-weight: 600;
+                                display: flex;
+                                justify-content: space-between;
+                                row-gap: 3px;
+                                label {
+                
+                                    color: #222222;
+                                }
+                                span {
+                                    color: #01D167;
+                                }
+                            }
+                            .date {
+                                font-size: 13px;
+                                color: #AAAAAA;
+                            }
+                            .action {
+                                color: #325BAF;
+                                font-size: 12px;
+                                &::before {
+                                    display: inline-block;
+                                    width: 24px;
+                                    padding: 1px 0 0 7px;
+                                    height: 20px;
+                                    margin-right: 5px;
+                                    border-radius: 50%;
+                                    background-color: #325BAF;
+                                    content: url(../assets/business-and-finance.svg);
+                                }
+                            }
+                        }
+                    }
+                }
+               
+               .view-all {
+                   padding: 15px;
+                   border: 1px solid #EDFFF5;
+                   background-color: #DDFFEC;
+                   border-radius: 0 0 12px 12px;
+                   color: #01D167;
+                   font-weight: bold;
+                   font-size: 13px;
+                   text-align: center;
+               }
+
+            }
+      }
+     
+
+}
+.header {
+    height: 100px;
+}

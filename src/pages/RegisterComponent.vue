@@ -44,7 +44,7 @@
             label="Repeat Password"
             bottom-slots
             required
-            errore="Password is not match"
+            error="Password is not match"
             />
         </q-card-section>
         <q-card-actions>
@@ -88,8 +88,8 @@ export default defineComponent({
        const emailPattern = /^(?=[a-zA-Z0-9@._%+-]{6,254}$)[a-zA-Z0-9._%+-]{1,64}@(?:[a-zA-Z0-9-]{1,63}\.){1,8}[a-zA-Z]{2,63}$/
        return (emailPattern.test(element) || 'Invalid email')
      },
-    login () {
-      alert('login sucess')
+    register () {
+      //this.$router.push({ name: 'make-loan' });
     }
    }
   

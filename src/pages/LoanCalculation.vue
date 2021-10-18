@@ -1,61 +1,62 @@
 <template>
-    <div class="loan-page">
-        <div class="loan-container">
-        <p class="ins">
+    <div class='loan-page'>
+        <div class='loan-container'>
+        <p class='ins'>
         Enter your values to see your monthly payment, and grand total, and interest paid.
         </p>
 
-        <div class="columns">
+        <div class='columns'>
   
-            <div class="column">    
+            <div class='column'>    
                 <label>Principal Loan Amount</label>
-                <q-input class="input" type="number" :blur="calc" v-model.number="loan.principal"/>
+                <q-input class='input' type='number' :blur='calc' v-model.number='loan.principal'/>
             </div>
-            <div class="column">    
+            <div class='column'>    
                 <label>Interest Rate</label>
-                <q-input class="input" type="text" :blur="calc" v-model.number="loan.interest"/>
+                <q-input class='input' type='text' :blur='calc' v-model.number='loan.interest'/>
             </div>
-            <div class="column">    
+            <div class='column'>    
                 <label>Time in Years</label>
-                <q-input class="input" type="number" :blur="calc" v-model.number="loan.timeYears"/>
+                <q-input class='input' type='number' :blur='calc' v-model.number='loan.timeYears'/>
             </div>
-            <div class="column">    
+            <div class='column'>    
                 <label>Compounded (months)</label>
-               <q-input class="input" type="number" :blur="calc" v-model.number="loan.compoundingEvery"/>
+               <q-input class='input' type='number' :blur='calc' v-model.number='loan.compoundingEvery'/>
             </div>
         </div>
         <q-btn
-          @click="calc"
+          @click='calc'
         >
          Calculate
         </q-btn>
 
-        <div class="result-columns">
-        <div class="column">
-            <div class="notification is-success">
+        <div class='result-columns'>
+        <div class='column'>
+            <div class='notification is-success'>
             <h3>Monthly Payment</h3>
             <p>${{ formatPrice(loan.payment) }}</p>
             </div>
         </div>
-        <div class="column">
-            <div class="notification is-warning">
+        <div class='column'>
+            <div class='notification is-warning'>
             <h3>Grand Total</h3>
             <p>${{ formatPrice(loan.total) }}</p>
             </div>
         </div>
-        <div class="column">
-            <div class="notification is-danger">
+        <div class='column'>
+            <div class='notification is-danger'>
 
             <h3>Total Interest</h3>
             <p>${{ formatPrice(loan.totalInterest) }}</p>
             </div>
         </div>
-        </div>
+    </div>
+
     </div>
     </div>
 </template>
 
-<script lang="ts">
+<script lang='ts'>
 import { defineComponent} from 'vue';
 
 export default defineComponent({
@@ -84,11 +85,53 @@ export default defineComponent({
             loan.payment = Math.round(loan.l / loan.r * 100) /100 ;
             loan.total = Math.round(loan.payment * loan.compoundingEvery*loan.timeYears  * 100) /100 ;
             loan.totalInterest = Math.round((loan.total - loan.principal )  * 100) /100 ;
+            this.amort();
             
         },
         formatPrice(value:number) {
             let val = (value/1).toFixed(2);
             return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        },
+
+        amort()
+        {
+            let balance = this.$data.loan.principal,
+            interestRate = this.$data.loan.interest,
+            terms =this.$data.loan.timeYears;
+            //Calculate the per month interest rate
+            let monthlyRate = interestRate/12;
+            
+            //Calculate the payment
+            let payment = balance * (monthlyRate/(1-Math.pow(
+                1+monthlyRate, -terms)));
+            
+            /**
+             * Loop that calculates the monthly Loan amortization amounts then adds 
+             * them to the return string 
+             */
+            let arrayPayment = [];
+            for (let count = 0; count < terms; ++count)
+            { 
+                //in-loop interest amount holder
+                let interest = 0;
+                
+                //in-loop monthly principal amount holder
+                let monthlyPrincipal = 0;
+                interest = balance * monthlyRate;
+                monthlyPrincipal = payment - interest;
+                balance = balance - monthlyPrincipal;	
+
+                let paidItem = {
+                    balance: balance.toFixed(2),
+                    interest: interest.toFixed(2),
+                    monthlyPrincipal: monthlyPrincipal,
+                    newBalance: balance
+                };
+                arrayPayment.push(paidItem);
+                	
+            }
+            
+            
         }
     }
 });

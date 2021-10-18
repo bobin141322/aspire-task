@@ -12,7 +12,7 @@ const routes: RouteRecordRaw[] = [
     children: [{ path: '', component: () => import('pages/CardComponent.vue') }],
   },
   {
-    path: '/credit',
+    path: '/login',
     component: () => import('layouts/MainLayout.vue'),
     children: [{ path: '', component: () => import('pages/Login.vue') }],
   },
@@ -22,7 +22,7 @@ const routes: RouteRecordRaw[] = [
     children: [{ path: '', component: () => import('pages/RegisterComponent.vue') }],
   },
   {
-    path: '/make-loan',
+    path: '/credit',
     component: () => import('layouts/MainLayout.vue'),
     children: [{ path: '', component: () => import('pages/LoanCalculation.vue') }],
   },

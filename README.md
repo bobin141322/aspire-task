@@ -12,15 +12,14 @@ npm install
 quasar dev
 ```
 
-### Lint the files
-```bash
-npm run lint
-```
+###1.Task 1: I have no enough the time to finish.
 
-### Build the app for production
-```bash
-quasar build
-```
+Press credit menu to open loan calculation
 
-### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+Login
+http://localhost:8091/#/login
+
+Register:
+http://localhost:8091/#/register
+
+###2.Task 2: style for desktop and mobile view port

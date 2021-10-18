@@ -1,0 +1,19 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style><![CDATA[
+		.sprite { display: none; }
+		.sprite:target { display: inline; }
+	]]></style>
+    </defs>
+    <g class="sprite" id="home-icon">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M7 9C7 7.34315 8.34315 6 10 6H22C23.6569 6 25 7.34315 25 9V23C25 24.6569 23.6569 26 22 26H10C8.34315 26 7 24.6569 7 23V9ZM9 18H23V14H9V18ZM9 20V23C9 23.5523 9.44772 24 10 24H22C22.5523 24 23 23.5523 23 23V20H9ZM23 9V12H9V9C9 8.44772 9.44772 8 10 8H22C22.5523 8 23 8.44772 23 9Z" fill="#476E9A"/>
+    </g>
+    <g class="sprite" id="payment-icon">
+    </g>
+    <g class="sprite" id="card-icon">
+    </g>
+    <g class="sprite" id="credit-icon">
+    </g>
+    <g class="sprite" id="user-icon">
+    </g>
+</svg>
